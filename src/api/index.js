@@ -1,17 +1,9 @@
-// 统一封装接口方法
-// 每个方法负责请求一个url地址
-// 逻辑页面, 导入这个接口方法, 就能发请求咯
-// 好处: 请求url路径, 可以在这里统一管理
 import request from '@/utils/request.js'
 import { getStorage } from '@/utils/storage.js'
 
-// 既引入也同时向外按需导出, 所有引入过来的方法 (中转)
-// * 代表所有
-export * from './ArticleDetail.js'
+// export * from './ArticleDetail.js'
 
 // 登录 - 登录接口
-// axios内部, 会把参数对象转成json字符串格式发后台
-// axios内部, 会自动携带请求参数(headers)里Content-Type: 'application/json' 帮你添加好
 export const loginAPI = ({ mobile, code }) => request({
   url: '/v1_0/authorizations',
   method: 'POST',
@@ -26,8 +18,6 @@ export const getNewTokenAPI = () => request({
   url: '/v1_0/authorizations',
   method: 'PUT',
   headers: {
-    // 请求拦截器统一携带的是token, 而这次请求需要带的是refresh_token
-    // 所以在axios请求拦截器里判断, 就是为了这种情况准备的
     Authorization: 'Bearer ' + getStorage('refresh_token')
   }
 })

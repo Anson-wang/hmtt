@@ -1,5 +1,5 @@
 // vue.config.js
-// const path = require('path')
+const path = require('path')
 module.exports = {
   devServer: { // 服务器配置
     proxy: { // 代理配置
@@ -31,7 +31,7 @@ module.exports = {
 
           // path.join() 会拼接后面的路径(需要你自己写前缀的绝对地址)
           // path.join() 拼接的时候, 可加可不加/
-          // hack: `true; @import "${path.join(__dirname, '/src/styles/cover.less')}";`
+          hack: `true; @import "${path.join(__dirname, '/src/styles/cover.less')}";`
         }
       }
     }

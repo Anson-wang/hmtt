@@ -1,7 +1,7 @@
 import request from '@/utils/request.js'
 import { getStorage } from '@/utils/storage.js'
 
-// export * from './ArticleDetail.js'
+export * from './ArticleDetail.js'
 
 // 登录 - 登录接口
 export const loginAPI = ({ mobile, code }) => request({

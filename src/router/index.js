@@ -31,7 +31,15 @@ const routes = [
         component: User
       }
     ]
-  }
+  },
+  {
+    path: '/search',
+    component: () => import('@/views/Search')
+  },
+  { // 搜索结果页
+    path: '/search_result/:kw',
+    component: () => import(/* webpackChunkName: "SearchResult" */ '@/views/Search/SearchResult')
+  },
 ]
 
 const router = new VueRouter({

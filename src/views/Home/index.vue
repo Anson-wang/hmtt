@@ -6,7 +6,7 @@
         <img class="logo" src="@/assets/logo.png" alt="logo" />
       </template>
       <template #right>
-        <van-icon name="search" size="18" color="#fff"></van-icon>
+        <van-icon name="search" size="18" color="#fff" @click="moveSearchPageFn"></van-icon>
       </template>
     </van-nav-bar>
     <!-- tab导航 -->
@@ -118,6 +118,9 @@ export default {
       // 我要让内部的编辑状态回归false
       this.$refs.editRef.isEdit = false;
     },
+    moveSearchPageFn() {
+      this.$router.push('/search')
+    }
   },
   computed: {
     unCheckChannelList() {

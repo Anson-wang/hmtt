@@ -13,12 +13,6 @@ const axios = theAxios.create({
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
-  // 在发送请求之前做些什么
-  // 目标: 统一携带token
-  // 判断本地有token再携带, 判断具体api/index.js里如果没有携带Authorization, 我在添加上去
-  // 未定义叫undefined, null具体的值你得赋予才叫空
-  // ?. 可选链操作符, 如果前面对象里没有length, 整个表达式原地返回undefined
-  // 如果getToken()在原地有值token字符串, 才能调用length获取长度
   if (getToken()?.length > 0 && config.headers.Authorization === undefined) {
     config.headers.Authorization = `Bearer ${getToken()}`
   }

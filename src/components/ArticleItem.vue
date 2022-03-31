@@ -34,7 +34,7 @@
             <span>{{ formatTime(artObj.pubdate) }}</span>
           </div>
           <!-- 反馈按钮 -->
-          <van-icon name="cross" @click="showAction" />
+          <van-icon name="cross" @click="showAction" v-if="isShow" />
         </div>
       </template>
     </van-cell>

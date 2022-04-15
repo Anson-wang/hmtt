@@ -40,6 +40,10 @@ const routes = [
     path: '/search_result/:kw',
     component: () => import(/* webpackChunkName: "SearchResult" */ '@/views/Search/SearchResult')
   },
+  { // 文章详情页
+    path: '/detail',
+    component: () => import(/* webpackChunkName: "Detail" */ '@/views/ArticleDetail')
+  },
 ]
 
 const router = new VueRouter({
